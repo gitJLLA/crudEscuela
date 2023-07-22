@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="calificaciones" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="70b9fb41-8fe0-4e89-be30-8640f51404ac">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     alumnos.`idalumnos` AS alumnos_idalumnos,
+     alumnos.`nombre` AS alumnos_nombre,
+     alumnos.`apellidos` AS alumnos_apellidos,
+     alumnos.`materia` AS alumnos_materia,
+     alumnos.`calificacion` AS alumnos_calificacion,
+     alumnos.`estatus` AS alumnos_estatus
+FROM
+     `alumnos` alumnos]]>
+	</queryString>
+	<field name="alumnos_idalumnos" class="java.lang.Integer"/>
+	<field name="alumnos_nombre" class="java.lang.String"/>
+	<field name="alumnos_apellidos" class="java.lang.String"/>
+	<field name="alumnos_materia" class="java.lang.String"/>
+	<field name="alumnos_calificacion" class="java.lang.Double"/>
+	<field name="alumnos_estatus" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="23" width="409" height="34" uuid="3140317d-96a5-4a7c-a5c0-69bfdb2c1b80"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CALIFICACIONES DE ALUMNOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="e16697d6-15ee-4016-a29b-14c50b5bf9c4"/>
+				<text><![CDATA[ID ALUMNOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="0" width="100" height="20" uuid="e2b69fef-5cf3-4154-b68a-635b347b29e3"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="0" width="100" height="20" uuid="f4a744db-db3b-475d-a918-85e2cd8baa12"/>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="2" width="100" height="20" uuid="c21f504b-72ac-46eb-8d35-0e010aea2cf9"/>
+				<text><![CDATA[MATERIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="550" y="2" width="100" height="20" uuid="4ad4f963-2449-4353-b3d7-2c5badf79c85"/>
+				<text><![CDATA[CALIFICACIONES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="672" y="2" width="100" height="20" uuid="ea7ce24c-7ee8-4c3d-9757-d073c5806b35"/>
+				<text><![CDATA[ESTATUS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="e2e75ed4-8030-414e-af21-467869be3148"/>
+				<textFieldExpression><![CDATA[$F{alumnos_idalumnos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="0" width="100" height="20" uuid="6b4df9bc-1f74-4ef4-9d96-6d6292c76af8"/>
+				<textFieldExpression><![CDATA[$F{alumnos_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="0" width="100" height="20" uuid="fe5ed380-d3a5-4913-9da4-76bb322ab600"/>
+				<textFieldExpression><![CDATA[$F{alumnos_apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="0" width="100" height="20" uuid="83ec3245-00f4-4f03-9068-e77f36a48810"/>
+				<textFieldExpression><![CDATA[$F{alumnos_materia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="0" width="100" height="20" uuid="8d91e78d-1a78-4f23-95f1-258530906799"/>
+				<textFieldExpression><![CDATA[$F{alumnos_calificacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="672" y="0" width="100" height="20" uuid="c8e479ed-e679-44f3-8bd7-f9eafd91d236"/>
+				<textFieldExpression><![CDATA[$F{alumnos_estatus}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
